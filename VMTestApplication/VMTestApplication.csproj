@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{08633D7D-EC6A-4DE5-982F-C7F364A7CE67}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>VMTestApplication</RootNamespace>
+        <AssemblyName>VMTestApplication</AssemblyName>
+        <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Deterministic>true</Deterministic>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32bit>false</Prefer32bit>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants></DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32bit>false</Prefer32bit>
+    </PropertyGroup>
+    <ItemGroup>
+    <Reference Include="IMVSBlobFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7fe8bad26cdedb7b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSBlobFindLabelsModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b8b30db40c995949, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSBoxMergeModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c869d688c6719f8d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSBoxFilterModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=619b5d81294f24b3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSBoxOverlapCalculationModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=274d19f8bbc7ef2f, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnClassifyModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1ce48ca275f18deb, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnClassifyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5ee55d7734e2dbf, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnSingleCharDetectModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a0a50bebe561608a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnSingleCharDetectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ad772401d31c66c1, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnFlawModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d60f139e428105c6, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnFlawModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4118cf07549972fc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRetrievalModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1f018be5be2f57f3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRetrievalModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=02507b3722aeb2e1, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnCharDetectModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9ff606522a42e0cf, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnCharDetectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=11441092ae200d87, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSOcrDlModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18d9baf32b5c135a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSOcrDlModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=550f37a1d881ce6f, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnInstanceSegmentModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41811bad56014bef, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnInstanceSegmentModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cdf2a15ba4a21c36, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnInspectModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4b1d6c8dd732854d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnInspectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=214d901a7dfd3a90, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnFastFlawModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=367b1a9b1f4d75d5, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnUnSupervisedModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3c09dd897fe1ed50, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnUnSupervisedClassifyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0371b0a0537a61cd, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnDetectModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f2c756fd9ccb83e0, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnDetectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5f59aabff94c4511, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnCodeRecgModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ec21f3cc2b45d9d4, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnCodeRecgModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c2d1fe7f3c7d7e4d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageCollectDalsaModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=48bc90db4681f2a4, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageCollectIKModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0181360a23a70c81, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMachineLearningClassifierModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e9aa2c4bf9b42307, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSNImageCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0702e4ab0478508e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSNPointCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=da4efc9666ec3aaa, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PyShellModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a0ce0b6ba72d1d05, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMedianLineFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=487755f75952dd4d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVS2dBcrModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2d71b6e5385ea779, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVS2dArrayCorrectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9debcbec6ff7603a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSIntensityMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f453ce2b77ccc58, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSAffineTransformModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=791f18aaf7c22f80, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSFixtureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e4dad505120a5f52, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSPixelCountModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1fa808cae911914b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSPixelCountModuVACs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=14172bf2f65df647, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LightModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1fb84aefb2e60473, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LightControlCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d708150847bf22aa, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GlobalVariableModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=df9beaf7c020f858, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GlobalCameraModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=48e7ef5a1f43f965, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GeometryCreateCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e5ea1d4f14e531ae, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSGeometricTransformModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0d28241102e48e42, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BranchStringCpmLCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f2feacddadafb85, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BranchModule_STDCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b25f4e77d5151502, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSDivideImageModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8e6b2d97ab3e4c5d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataAssembleModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d8aaebd8aa6cb7f2, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataAnalysisModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d044ff23bc3e0a86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSScaleTransformModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2359f74d2b1d4722, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSSinglePointAlignModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b3fdadaaeb190014, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SinglePointGrabModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fb4f07aaff38d00b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SinglePointMapAlignModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=edbf9ebcc0decc59, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SinglePointRectifyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=843323ef518abdec, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCaliperModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=edbac3fa644be2c3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SendDatasModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b327819980f6c95d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CalculatorModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=05c54d68067b9216, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSQuadrangleFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9cd04858519c6211, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSBinaryModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=56b1b826c649d79f, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageFixtureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ace97d2205d0b8b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageEnhanceModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3cb886856ce96947, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageNormlizeModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e6513c7a5ccaae57, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImgStitchCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0e461369836383d8, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageSourceModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6a03c4a48a6df5e6, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageFilterModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ed6eecc75ac3200c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageCorrectManualModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=254d45ffa21143af, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageCombineProcessModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=10a06994332f2fc3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageResizeModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2259d23cef2bdbc9, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageMathModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c2ed9ac3e656449a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMarkFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f5b7001f1805d7f5, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GraphicsSetModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=969f13d2d78c3370, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSC2CMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=50a6501e070f5742, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCircleEdgePairInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dbd7725f6ba13758, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCircleEdgeInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2a7209f682f18210, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCircleFitModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=43056db02cf11d53, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCircleFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cbed95538e129137, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSPolarUnwarpModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=db47c4ad5a33133d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CoordinateModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6149e183cb4d2285, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CoordinateTransformCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f0c5d9200530b61, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSVerticalLineFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5e28ebef07bf0020, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Apps.ColorFun, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cfdb8c430127f15b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VM.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61600122bc9264b9, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VM.PlatformSDKCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c1484a72052ee3d4, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VMControls.BaseInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=14444b8df74b6e6a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VMControls.WPF.Release, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fdd2c8be7291c30c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VMControls.Interface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cb41614600cf774b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VMControls.RenderInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bcfc50547abbb24, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VMControls.Winform.Release, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2efa940dfee4dc7e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMultiImageFusionModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=55d88779c0e91b06, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageAcquisitionModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8581e2b6399e0aa2, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMultiLabelFilterModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d6c20246f1ff35fd, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMultiLineFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=77d8fa6b2e05bf95, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StringCompareModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5685c4304d825d01, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMarkInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=318c90ff9c62747f, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMarkInspModuVACs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fd756fe7f28d3445, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSOcrModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aac3512f35327143, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSFrameMeanModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=08a547c1de91a86e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TranslationCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=865e9170186261eb, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSPairLineModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2f9b5c6cdf56b08e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSParallelCalculateModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7e0f6a183706769, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSInspectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a54341d93c0fea08, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageMorphModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345d161ad378bbca, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSColorImageGenerationModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23787d1a3a176fa5, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSFastFeatureMatchModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ca9d2dd350762d2, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSRegionCopyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=80a44d101397d808, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ReadDatasModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2a989deb766dd29c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataClassificationModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5f52c9dec025948, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataSortModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d9bd1aa5ef122496, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataFilterModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af8019dc845683a7, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataRecordModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d1a4aefd7e3ee824, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataQueueModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=67d60b40029f11c3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataSetModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c4b4ade4437b1703, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SaveTextModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3cde6a94e7998ed, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RotateCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9d51363f4f396d36, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSRotateCalculateModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0b24ef9e00dbf488, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMapCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3873379fa7af2da6, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IfBranchModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d1cd8cf5ae69cd49, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IfModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1ba1107829384f3c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSBcrModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6c8e56e03ac48b2e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ReadCalibFileModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc2c1c71094a56c4, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCalibBoardCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90420971e52f2d79, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCalibTransformModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=737ede30d70c90df, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FormatModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc3399e8d740ba6a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEllipseFitModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=60ffa9ef11ccaf10, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEllipseFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8ed79a8a6ba9ab09, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRegisterSegmentModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d0dacd268aa4e624, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRegisterSegmentModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=63b30597fbdecc73, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRegisterClassifyModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5f72bd71b2ed9da9, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRegisterClassifyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6ae11060c5b20d69, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRegisterDetectModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=906fbaa5b999ab0b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnRegisterDetectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=762a57d9b2a9ed67, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageSharpnessModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15fee5829ecec07c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSGrayMatchModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3f74a1522c95aea, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSGrayMatchModuVACs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96929120b239ec13, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSP2CMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5cfb496049812c42, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSP2PMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2830a24bac4c62d2, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSP2LMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54056a7ec1941bc3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PointSetMODU_STDCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=febca48962b3ccf5, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMultiPointAlignModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cad5b8e53a935847, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24f57d5e2a91a31e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSImageCorrectCalibModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb7d0f94ce1512f, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSTargetTrackModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c68d1bd5b7229054, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSHistToolModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d10c7ddae66a54c8, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSLineEdgePairInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41789021bb481978, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSLineFitModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d48adae15822c46d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSLineFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15941e18b10db20b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSLineFindGroupModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=285bb1ce9a494e3f, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSLineEdgeInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8c1bbb53f1f3cb07, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CameraIOModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15b4774d678cd082, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCameraMapModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=369f02cc6412392e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSRectFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=721f5f3c8736a915, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSL2CMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=05f448b89216c3f5, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSLineAlignModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=10b02c3045f7473d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSL2LMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=81fb95483587e890, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSGroupCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93c2eed79fa68a0a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageBufferModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=88dbcb3c86128e2d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TimeStatisticModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d7fec45a504a815, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ShellModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a88b3f19f0240810, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSSurfaceDefectFilterModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5375bd3473fcb9f0, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSAngleBisectorFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4784e51992e9031d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TriggerModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7dfc417f04c596e4, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSGluePathConductModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e482d4f1fe22af0c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSContourMatchModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=91bd2ec83e827309, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SaveImageCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71ec4914c8d95fd5, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCaliperCornerModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=afa702cf00f4d5ad, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgePosTrendAnalyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b81611952a50af6c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgePairPosTrendAnalyModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=eca536b23bb46fbe, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgePairFlawInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4ad240f48982cf78, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgePairInspGroupModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c81e11d424f49e3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCaliperEdgeModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2e9b837021fe7c82, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgeFlawInspModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=20026c1ba1b73a11, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgeInspGroupModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15301fd466445214, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageCollectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1456d47d4d035431, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSInverseAffineTransformModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=47877414edd7a6b8, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommManagerModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17913397e05a26ba, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AndModuleCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=426f9e88d7a6a158, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSEdgeWidthFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b66ff8cc847f0230, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSShadeCorrectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b06e146d1a4ca667, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSMatrixCircleFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4c12340a350f0aaf, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSPeakFindModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=79a990e1e78ccb57, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSColorSegmentModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3e790bdd13bf266c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSColorExtractModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3e790bdd13bf266c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSColorMeasureModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=46d87ec08fc6b297, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSColorRecognitionModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2e91c65aeb847a34, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSColorTransformModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d910a412aa93dc5e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSHPFeatureMatchModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3a8001c24b4e8881, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnHPRegisterDetectModuCCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=906fbaa5b999ab0b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IMVSCnnHPRegisterDetectModuCs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=906fbaa5b999ab0b, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Deployment"/>
+        <Reference Include="System.Drawing"/>
+        <Reference Include="System.Net.Http"/>
+        <Reference Include="System.Windows.Forms"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="YamlDotNet, Version=16.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+          <HintPath>..\packages\YamlDotNet.16.3.0\lib\netstandard2.0\YamlDotNet.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Config\ConfigManager.cs" />
+        <Compile Include="Config\MainConfig.cs" />
+        <Compile Include="MainForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="MainForm.Designer.cs">
+            <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Program.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <EmbeddedResource Include="MainForm.resx">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <None Include="packages.config" />
+        <None Include="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+        <Compile Include="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config"/>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="README.md" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>
+
+
