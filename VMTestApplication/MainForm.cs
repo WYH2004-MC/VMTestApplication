@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog.Targets;
 using VM.Core;
 using VM.PlatformSDKCS;
 using VMControls.Winform.Release;
@@ -46,6 +49,18 @@ namespace VMTestApplication
             {
                 Console.WriteLine(ex);
                 throw;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VmProcedure vmProcedure = (VmProcedure)VmSolution.Instance["Cam1检测"];
+            vmRenderControl1.ModuleSource = vmProcedure;
+            
+            vmProcedure.SyncRun();
+            if(vmRenderControl1.ImageSource != null)
+            {
+                vmRenderControl1.SaveOriginalImage("D:\\Test.bmp");
             }
         }
     }

@@ -56,16 +56,17 @@ namespace VMTestApplication
                 throw;
             }
             VM_EnvironmentCheck();
+            Console.WriteLine("程序初始化完成");
         }
         
-        private static void VM_EnvironmentCheck()
+        private static bool VM_EnvironmentCheck()
         {
             var vmProcesses = new List<string> { "VisionMaster", "VisionMasterServerApp","VmModuleProxy" };
             var runningProcesses = vmProcesses
                 .SelectMany(Process.GetProcessesByName)
                 .ToList();
 
-            if (runningProcesses.Count <= 0) return;
+            if (runningProcesses.Count <= 0) return true;
     
             if(!MainConfig.KillVmServiceWithStartUp){
                 var result = MessageBox.Show(
@@ -77,6 +78,7 @@ namespace VMTestApplication
                 if (result == DialogResult.No)
                 {
                     Application.Exit();
+                    return false;
                 }
             }
             
@@ -90,16 +92,11 @@ namespace VMTestApplication
                 catch (Exception ex)
                 {
                     MessageBox.Show($@"终止进程 {process.ProcessName} 失败：{ex.Message}");
+                    throw;
+                    return false;
                 }
             }
-        }
-    }
-
-    public class Logger
-    {
-        public static void Print(string log)
-        {
-            //MainForm
+            return true;
         }
     }
 }
